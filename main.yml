@@ -1,0 +1,23 @@
+---
+- name: Deploying IOTGlue-1.14.0
+  hosts: localhost
+  become: true
+
+  tasks:
+    - name: update cache
+      apt:
+        update_cache: true
+
+    - name: Update disto
+      apt:
+        upgrade: true
+        
+    - name: install git
+      apt:
+        name: git
+        state: present
+        
+    - name: clone the git repo
+      git:
+        repo: 'https://github.com/harshabhaskar/terra.git'
+        dest: /opt/terra
