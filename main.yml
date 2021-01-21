@@ -19,7 +19,7 @@
         
     - name: create a folder
       file:
-        src: /opt/harsha/
+        path: /opt/harsha/
         state: directory
         mode: 777
         
