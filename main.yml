@@ -17,7 +17,13 @@
         name: git
         state: present
         
+    - name: create a folder
+      file:
+        src: /opt/harsha/
+        state: directory
+        mode: 777
+        
     - name: clone the git repo
       git:
         repo: 'https://github.com/harshabhaskar/terra.git'
-        dest: /opt/terra
+        dest: /opt/harsha/terra
